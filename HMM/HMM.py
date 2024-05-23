@@ -36,7 +36,7 @@ class HMM:
         self.index_to_states = ["B", "M", "S", "E"]                                    # 根据索引获取对应状态
         self.len_states = len(self.states_to_index)                                    # 状态长度 : 这里是4
 
-        self.init_matrix = np.zeros((self.len_states))                                 # 初始矩阵 : 1 * 4 , 对应的是 BMSE
+        self.init_matrix = np.zeros(self.len_states)                                 # 初始矩阵 : 1 * 4 , 对应的是 BMSE
         self.transfer_matrix = np.zeros((self.len_states, self.len_states))            # 转移状态矩阵:  4 * 4 ,
 
         # 发射矩阵, 使用的 2级 字典嵌套
@@ -125,7 +125,7 @@ def viterbi_t( text, hmm):
 
 if __name__ == "__main__":
     text_to_state()
-    text = "虽然一路上队伍里肃静无声"
+    text = "他今天买了一些打印机"
 
     hmm = HMM()
     hmm.train()
